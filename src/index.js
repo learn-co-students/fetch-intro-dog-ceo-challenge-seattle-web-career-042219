@@ -4,7 +4,6 @@ const breedUrl = "https://dog.ceo/api/breeds/list/all";
 
 document.addEventListener("DOMContentLoaded", () => {
   function main() {
-    console.log("main fires");
     addListeners();
     fetchDogImages();
     fetchDogBreeds();
@@ -28,12 +27,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function addAllDogImages(dogs) {
-    console.log("dogs=", dogs);
     dogs.forEach(dog => addDogImage(dog));
   }
 
   function addDogImage(dog) {
-    console.log("dog=", dog);
     let img = document.createElement("img");
     img.setAttribute("src", dog);
     img.classList.add("small");
@@ -72,7 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
     let ul = document.getElementById("dog-breeds");
     let breedName = document.getElementById("breed-dropdown").value;
-    console.log("breedName=", breedName);
     if (breedName === "none") {
       for (let i = 0; i < ul.children.length; i++) {
         const li = ul.children[i];
@@ -91,8 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function blueFx() {
-    console.log("blueFx fires");
-    //   const li = this.parentElement;
     const li = event.target.parentElement;
     if (event.target.parentElement.classList.contains("blue")) {
       li.classList.remove("blue");
