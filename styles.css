@@ -1,0 +1,16 @@
+ul {
+  list-style: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.blue {
+  color: blue;
+}
+
+.small {
+  height: 120px;
+  width: auto;
+}
