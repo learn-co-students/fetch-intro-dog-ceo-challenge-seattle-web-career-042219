@@ -61,16 +61,19 @@ document.addEventListener('DOMContentLoaded', () => {
       ul = document.getElementById('dog-breeds')
       dropdown.addEventListener("change", (e) => {
         e.preventDefault();
+
+        // clearing from possible previous search
         for (let li of ul.children){
           li.classList.remove('hidden')
         }
 
+        // hiding if not a match for selected letter
         for (let li of ul.children) {
           if (li.textContent.charAt(0) != e.target.value) {
             li.className = "hidden"
           }
         }
-
+        //shows full list if rest is selected from dropdown
         if (event.target.value === "reset") {
           for (let li of ul.children) {
             li.classList.remove('hidden');
