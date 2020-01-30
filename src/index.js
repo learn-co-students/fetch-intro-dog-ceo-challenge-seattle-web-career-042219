@@ -19,6 +19,9 @@ function fetchDogImages() {
     })
     .then(json => {
       return addAllDogImages(json.message);
+    })
+    .catch(function(error) {
+      console.log(error);
     });
 }
 
@@ -27,10 +30,10 @@ function addAllDogImages(dogs) {
 }
 
 function addDogImage(dog) {
-  let img = document.createElement("img");
+  const img = document.createElement("img");
   img.setAttribute("src", dog);
   img.classList.add("small");
-  let container = document.getElementById("dog-image-container");
+  const container = document.getElementById("dog-image-container");
   container.appendChild(img);
 }
 
@@ -51,20 +54,22 @@ function addAllDogBreeds(breedsList) {
 }
 
 function addDogBreed(breed) {
-  let li = document.createElement("li");
+  const li = document.createElement("li");
   li.textContent = breed;
-  let ul = document.getElementById("dog-breeds");
+
+  const ul = document.getElementById("dog-breeds");
   colorButton = document.createElement("button");
   colorButton.innerHTML = "Blue";
   colorButton.addEventListener("click", blueFx);
+
   li.appendChild(colorButton);
   ul.appendChild(li);
 }
 
 function filter(event) {
   event.preventDefault();
-  let ul = document.getElementById("dog-breeds");
-  let breedName = document.getElementById("breed-dropdown").value;
+  const ul = document.getElementById("dog-breeds");
+  const breedName = document.getElementById("breed-dropdown").value;
   if (breedName === "none") {
     for (let i = 0; i < ul.children.length; i++) {
       const li = ul.children[i];
