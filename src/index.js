@@ -20,8 +20,8 @@ function fetchDogImages() {
     .then(json => {
       return addAllDogImages(json.message);
     })
-    .catch(function(error) {
-      console.log(error);
+    .catch(function(err) {
+      console.log(err);
     });
 }
 
